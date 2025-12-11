@@ -3,32 +3,9 @@ import Footer from "@/components/Footer";
 import ProductCard from "@/components/ProductCard";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
+import { products } from "@/data/products";
 
 export default function Home() {
-  const products = [
-    {
-      name: "بلاك أوركيد",
-      type: "Eau de Parfum",
-      price: "450 ر.س",
-      image: "/images/perfume-1.jpg",
-      delay: 0
-    },
-    {
-      name: "عود سيام",
-      type: "Extrait de Parfum",
-      price: "850 ر.س",
-      image: "/images/perfume-2.jpg",
-      delay: 200
-    },
-    {
-      name: "مسك الرمان",
-      type: "Oil Blend",
-      price: "320 ر.س",
-      image: "/images/perfume-3.jpg",
-      delay: 400
-    }
-  ];
-
   return (
     <div className="min-h-screen bg-[#050505] text-white overflow-x-hidden font-tajawal selection:bg-gold selection:text-black">
       <Navbar />
