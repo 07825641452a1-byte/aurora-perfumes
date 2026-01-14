@@ -1,6 +1,9 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ProductCard from "@/components/ProductCard";
+import HeroSection from "@/components/HeroSection";
+import SectionHeader from "@/components/SectionHeader";
+import Newsletter from "@/components/Newsletter";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import { products } from "@/data/products";
@@ -10,41 +13,13 @@ export default function Home() {
     <div className="min-h-screen bg-[#050505] text-white overflow-x-hidden font-tajawal selection:bg-gold selection:text-black">
       <Navbar />
 
-      {/* Hero Section */}
-      <header className="relative h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Image with Zoom Effect */}
-        <div className="absolute inset-0 z-0">
-          <div 
-            className="absolute inset-0 bg-cover bg-center animate-[zoomPan_25s_infinite_alternate_ease-in-out]"
-            style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-[#050505]" />
-          <div className="absolute inset-0 bg-black/40" />
-        </div>
-
-        {/* Hero Content */}
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-          <div className="border border-gold/30 bg-black/40 backdrop-blur-sm p-8 md:p-16 animate-in fade-in zoom-in duration-1000">
-            <h1 className="font-amiri text-6xl md:text-8xl text-gold mb-4 drop-shadow-[0_0_15px_rgba(212,175,55,0.3)]">
-              أورورا
-            </h1>
-            <p className="text-xl md:text-2xl text-[#F4E29E] uppercase tracking-[0.2em] font-light mb-8">
-              حيث يلتقي السحر بالعبق
-            </p>
-            <Button 
-              className="bg-transparent border border-gold text-gold hover:bg-gold hover:text-black text-lg px-8 py-6 uppercase tracking-widest transition-all duration-500"
-            >
-              اكتشف المجموعة
-            </Button>
-          </div>
-        </div>
-
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-white/50">
-          <span className="text-xs uppercase tracking-widest mb-2 block text-center">تصفح</span>
-          <div className="w-[1px] h-12 bg-gradient-to-b from-gold to-transparent mx-auto" />
-        </div>
-      </header>
+      <HeroSection
+        title="أورورا"
+        subtitle="حيث يلتقي السحر بالعبق"
+        cta={{
+          text: "اكتشف المجموعة"
+        }}
+      />
 
       {/* Introduction Section */}
       <section className="py-24 px-4 relative">
@@ -67,9 +42,7 @@ export default function Home() {
         
         <div className="container mx-auto">
           <div className="text-center mb-20">
-            <h2 className="font-amiri text-4xl md:text-5xl text-gold inline-block border-b-2 border-gold/50 pb-4 px-8">
-              الإصدارات الخاصة
-            </h2>
+            <SectionHeader title="الإصدارات الخاصة" />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-8 justify-items-center">
@@ -110,6 +83,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <Newsletter />
 
       <Footer />
     </div>

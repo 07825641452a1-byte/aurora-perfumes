@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, ShoppingBag } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Cart from "@/components/Cart";
 import { cn } from "@/lib/utils";
 
 export default function Navbar() {
@@ -65,9 +66,7 @@ export default function Navbar() {
 
         {/* Actions */}
         <div className="hidden md:flex items-center gap-4">
-          <Button variant="ghost" size="icon" className="text-white hover:text-gold hover:bg-white/5">
-            <ShoppingBag className="w-5 h-5" />
-          </Button>
+          <Cart />
           <Button 
             variant="outline" 
             className="border-gold text-gold hover:bg-gold hover:text-black transition-all duration-300 font-tajawal"
