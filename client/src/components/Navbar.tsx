@@ -37,8 +37,13 @@ export default function Navbar() {
       <div className="container flex items-center justify-between">
         {/* Logo */}
         <Link href="/">
-          <a className="text-2xl md:text-3xl font-amiri font-bold text-gold tracking-wider hover:opacity-90 transition-opacity">
-            أورورا
+          <a className="flex flex-col items-center group">
+            <span className="text-2xl md:text-4xl font-amiri font-bold text-gold tracking-[0.2em] group-hover:drop-shadow-[0_0_10px_rgba(212,175,55,0.5)] transition-all duration-500">
+              AURORA
+            </span>
+            <span className="text-[10px] md:text-xs text-white/50 tracking-[0.5em] -mt-1 group-hover:text-gold/70 transition-colors duration-500">
+              أورورا
+            </span>
           </a>
         </Link>
 

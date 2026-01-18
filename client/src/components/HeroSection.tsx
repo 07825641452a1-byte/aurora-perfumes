@@ -34,11 +34,18 @@ export default function HeroSection({
 
       {/* Hero Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-        <div className="border border-gold/30 bg-black/40 backdrop-blur-sm p-8 md:p-16 animate-in fade-in zoom-in duration-1000">
-          <h1 className="font-amiri text-6xl md:text-8xl text-gold mb-4 drop-shadow-[0_0_15px_rgba(212,175,55,0.3)]">
+        <div className="border border-gold/30 bg-black/40 backdrop-blur-sm p-8 md:p-16 animate-in fade-in zoom-in duration-1000 relative overflow-hidden">
+          {/* Decorative Corners */}
+          <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-gold" />
+          <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-gold" />
+          <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-gold" />
+          <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-gold" />
+          
+          <h1 className="font-amiri text-6xl md:text-9xl text-gold mb-4 drop-shadow-[0_0_25px_rgba(212,175,55,0.5)]">
             {title}
           </h1>
-          <p className="text-xl md:text-2xl text-[#F4E29E] uppercase tracking-[0.2em] font-light mb-8">
+          <div className="w-24 h-px bg-gold/50 mx-auto mb-6" />
+          <p className="text-xl md:text-2xl text-[#F4E29E] uppercase tracking-[0.3em] font-light mb-8">
             {subtitle}
           </p>
           {cta && (

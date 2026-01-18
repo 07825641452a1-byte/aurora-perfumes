@@ -6,10 +6,12 @@ interface ProductCardProps {
   type: string;
   price: string;
   image: string;
+  description: string;
+  category: string;
   delay?: number;
 }
 
-export default function ProductCard({ name, type, price, image, delay = 0 }: ProductCardProps) {
+export default function ProductCard({ name, type, price, image, description, category, delay = 0 }: ProductCardProps) {
   return (
     <div 
       className="group w-full max-w-[350px] mx-auto relative animate-in fade-in slide-in-from-bottom-8 duration-1000 fill-mode-both"
@@ -44,7 +46,12 @@ export default function ProductCard({ name, type, price, image, delay = 0 }: Pro
           
           <div className="relative z-10">
             <h3 className="font-amiri text-2xl text-gold mb-1 group-hover:text-white transition-colors duration-300">{name}</h3>
-            <span className="text-xs uppercase tracking-[0.2em] text-white/50 block mb-4 font-tajawal">{type}</span>
+            <div className="flex items-center justify-center gap-2 mb-2">
+              <span className="text-[10px] uppercase tracking-[0.1em] text-gold/70 border border-gold/30 px-2 py-0.5 font-tajawal">{category}</span>
+              <span className="text-[10px] uppercase tracking-[0.1em] text-white/50 font-tajawal">{type}</span>
+            </div>
+            
+            <p className="text-xs text-white/60 mb-4 line-clamp-2 h-8 leading-relaxed">{description}</p>
             
             <div className="flex items-center justify-center gap-4 mb-4">
               <span className="font-cinzel text-lg text-white border border-white/10 px-3 py-1">{price}</span>
